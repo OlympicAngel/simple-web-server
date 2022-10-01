@@ -42,8 +42,8 @@ class SimpleServer {
 
         this.isINI = true;
         const serverOpt = {
-            key: fs.readFileSync(GetServerPath(this) + 'ssl/privkey.pem'),
-            cert: fs.readFileSync(GetServerPath(this) + 'ssl/cert.pem')
+            key: fs.readFileSync(GetServerPath(this) + '../ssl/privkey.pem'),
+            cert: fs.readFileSync(GetServerPath(this) + '../ssl/cert.pem')
         }
 
         const serverConstructor = this.isSSL ? https : http;

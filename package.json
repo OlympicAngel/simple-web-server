@@ -1,15 +1,22 @@
 {
-  "name": "simple-web-server",
+  "name": "@olympicangel/simple-web-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "description": "A small library that create web sever with websocket server in it",
+  "main": "simpleServer.js",
   "author": "OlympicAngel",
   "license": "MIT",
   "dependencies": {
     "websocket": "^1.0.34"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlympicAngel/simple-web-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OlympicAngel/simple-web-server/issues"
+  },
+  "homepage": "https://github.com/OlympicAngel/simple-web-server#readme"
 }
