@@ -5,7 +5,7 @@ A small library that create web sever with websocket server in it
 
 ## Installation
 
-  `npm install `
+  `npm i @olympicangel/simple-web-server`
 
 ## Usage
 ```js
