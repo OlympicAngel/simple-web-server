@@ -140,6 +140,10 @@ class SimpleServer {
             prefix = prefix.replace("Server", "WS")
         console.log(`${color}[${prefix}/${this.port}]: ${message}`)
     }
+	
+	    GetPath() {
+        return GetServerPath(this)
+    }
 }
 
 function GetServerPath(simpleServerRef) {
