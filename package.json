@@ -1,6 +1,6 @@
 {
   "name": "@olympicangel/simple-web-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small library that create web sever with websocket server in it",
   "main": "simpleServer.js",
   "author": "OlympicAngel",
