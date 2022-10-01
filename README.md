@@ -24,7 +24,7 @@ A small library that create web sever with websocket server in it
 
 
 ## Class extaning
-In this example we take creates a *http* server that trafic to *https* 
+In this example we creates a *http* server that trafic to *https* 
 there is override for every function.
 ```js
 const ws_module = require('websocket');
@@ -73,40 +73,39 @@ class HttpServer extends SimpleServer {
         response.end();
         return;
     
-        //This is the defaulted if not override
-        var urlPath = request.url?.toLocaleLowerCase()
-        if (request.url.toLocaleLowerCase() == "/")
-            urlPath = "index.html";
-
-        const mime = {
-            html: 'text/html',
-            txt: 'text/plain',
-            css: 'text/css',
-            gif: 'image/gif',
-            jpg: 'image/jpeg',
-            png: 'image/png',
-            svg: 'image/svg+xml',
-            js: 'application/javascript'
-        };
-        let formatType = urlPath.split(".")[1];
-        const isImage = ["gif", "jpg", "png", "svg"].indexOf(formatType) != -1;
-        this.Logger("Requested" + urlPath)
-        fs.readFile(GetServerPath(this) + urlPath, (isImage) ? "" : "utf-8", function (err, data) {
-            if (err) {
-                response.write(JSON.stringify(err));
-                response.end();
-                return console.log(err);
-            }
-
-            var type = mime[formatType] || 'text/plain';
-            response.writeHead(200, {
-                'Content-Type': type
-            });
-            if (isImage)
-                response.end(data, 'binary');
-            else
-                response.end(data, 'utf8');
-        });
+        /** This is the defaulted if not override
+        * var urlPath = request.url?.toLocaleLowerCase()
+        * if (request.url.toLocaleLowerCase() == "/")
+        *     urlPath = "index.html";
+        * const mime = {
+        *     html: 'text/html',
+        *     txt: 'text/plain',
+        *     css: 'text/css',
+        *     gif: 'image/gif',
+        *     jpg: 'image/jpeg',
+        *     png: 'image/png',
+        *     svg: 'image/svg+xml',
+        *     js: 'application/javascript'
+        * } ;
+        * let formatType = urlPath.split(".")[1];
+        * const isImage = ["gif", "jpg", "png", "svg"].indexOf(formatType) != -1;
+        * this.Logger("Requested" + urlPath)
+        * fs.readFile(GetServerPath(this) + urlPath, (isImage) ? "" : "utf-8", function (err, data) {
+        *     if (err) {
+        *         response.write(JSON.stringify(err));
+        *         response.end();
+        *         return console.log(err);
+        *     }
+        *     var type = mime[formatType] || 'text/plain';
+        *     response.writeHead(200, {
+        *         'Content-Type': type
+        *     });
+        *     if (isImage)
+        *         response.end(data, 'binary');
+        *     else
+        *        response.end(data, 'utf8');
+        * });
+        */
     }
 }
 ```
