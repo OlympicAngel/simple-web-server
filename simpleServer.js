@@ -48,7 +48,8 @@ class SimpleServer {
 
         const serverConstructor = this.isSSL ? https : http;
         const server = serverConstructor.createServer(this.isSSL ? serverOpt : {}, (req, res) => { this.onHttpResponse.bind(this); this.onHttpResponse(req, res) })
-        server.listen(this.port, () => { this.Logger("Up & Ready.") })
+        this.http = server;
+	server.listen(this.port, () => { this.Logger("Up & Ready.") })
         this.ws = new WebSocketServer(Object.assign({ "httpServer": server }, ws_opt))
         this.Logger("WS ready.", true)
 
