@@ -41,10 +41,10 @@ class SimpleServer {
             return this.Logger("Attempt to run ini after initialization.");
 
         this.isINI = true;
-        const serverOpt = {
+        const serverOpt = this.isSSL?{
             key: fs.readFileSync(GetServerPath(this) + '../ssl/privkey.pem'),
             cert: fs.readFileSync(GetServerPath(this) + '../ssl/cert.pem')
-        }
+        }:{};
 
         const serverConstructor = this.isSSL ? https : http;
         const server = serverConstructor.createServer(this.isSSL ? serverOpt : {}, (req, res) => { this.onHttpResponse.bind(this); this.onHttpResponse(req, res) })
