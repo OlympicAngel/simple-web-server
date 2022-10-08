@@ -23,7 +23,7 @@ A small library that create web sever with websocket server in it
 ```
 
 
-## Class extaning
+## Class extanding
 In this example we creates a *http* server that trafic to *https* 
 there is override for every function.
 ```js
