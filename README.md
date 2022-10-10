@@ -9,7 +9,7 @@ A small library that create web sever with websocket server in it
 
 ## Usage
 ```js
-    const SimpleServer = require('@jdaudier/number-formatter');
+    const SimpleServer = require('@olympicangel/number-formatter');
 
     const myServer = new SimpleServer({
               path: "/www/",    //the path to server serveing files (accsesable folder)
